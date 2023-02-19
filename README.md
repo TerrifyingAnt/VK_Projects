@@ -21,24 +21,23 @@
 
 <h3>Как работает?</h3>
 <a href="[https://disk.yandex.ru/i/tEnT_Y17wvGDkQ](https://disk.yandex.ru/i/oJpDX-M3Tw7f4w)">Это ссылка на яндекс диск, где лежит видео работы приложения.</a>
-<ul>
-   <li>Если нет интернета при запуске:
+   <p>Если нет интернета при запуске:
       <img src="https://user-images.githubusercontent.com/80172256/219909179-a358007b-e83f-4e66-93fe-ab383d24fc94.jpg" width=150/>
-</li>
-   <li>При нажатии на кнопку, сообщающую о неполадках:
+</p>
+   <p>При нажатии на кнопку, сообщающую о неполадках:
       <img src="https://user-images.githubusercontent.com/80172256/219909198-4cc542cc-76c8-4e66-9ae5-dad1cdbef313.jpg" width=150/>
-</li>
-   <li>Возвращение на главную страницу:      
+</p>
+   <p>Возвращение на главную страницу:      
       <img src="https://user-images.githubusercontent.com/80172256/219909241-04e77da4-36bc-4643-bf2e-fbe4911b5f14.jpg" width=150/>
-</li>
+</p>
    
-   <li>
+   <p>
       Выбор элемента из списка:
       <img src="https://user-images.githubusercontent.com/80172256/219909270-6c59da6a-088e-41ca-81ed-354a4a64de9f.jpg" width=150/>
-</li>
-   <li>Кликабельная ссылка:
+</p>
+   <p>Кликабельная ссылка:
       <img src="https://user-images.githubusercontent.com/80172256/219909282-a1067f34-17e5-4658-99af-a5c67abcfd17.jpg" width=150/>
-</li>
-</ul>
+</p>
+
 
 
