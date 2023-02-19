@@ -35,8 +35,6 @@
       <img src="https://user-images.githubusercontent.com/80172256/219909270-6c59da6a-088e-41ca-81ed-354a4a64de9f.jpg" width=150/>
 
    <p>Кликабельная ссылка:</p>
-      <img src="https://user-images.githubusercontent.com/80172256/219909282-a1067f34-17e5-4658-99af-a5c67abcfd17.jpg" width=150/>
-
-
+      <img src="https://user-images.githubusercontent.com/80172256/219909419-95c18fe1-f441-4450-8c48-feca952013a5.jpg" width=150/>
 
 
