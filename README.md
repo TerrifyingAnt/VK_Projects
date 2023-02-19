@@ -20,5 +20,5 @@
 </ul>
 
 <h3>Как работает?</h3>
-<video src="https://disk.yandex.ru/i/tEnT_Y17wvGDkQ.mp4"/>
+<video src='https://disk.yandex.ru/i/tEnT_Y17wvGDkQ.mp4'/>
 
