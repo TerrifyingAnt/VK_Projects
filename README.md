@@ -20,7 +20,7 @@
 </ul>
 
 <h3>Как работает?</h3>
-<a href="[https://disk.yandex.ru/i/tEnT_Y17wvGDkQ](https://disk.yandex.ru/i/oJpDX-M3Tw7f4w)">Это ссылка на яндекс диск, где лежит видео работы приложения.</a>
+<a href="https://disk.yandex.ru/i/tEnT_Y17wvGDkQ">Это ссылка на яндекс диск, где лежит видео работы приложения.</a>
    <p>Если нет интернета при запуске:   </p>
       <img src="https://user-images.githubusercontent.com/80172256/219909179-a358007b-e83f-4e66-93fe-ab383d24fc94.jpg" width=150/>
 
