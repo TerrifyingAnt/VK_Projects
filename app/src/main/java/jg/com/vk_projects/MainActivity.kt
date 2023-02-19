@@ -3,6 +3,7 @@ package jg.com.vk_projects
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.provider.Settings
@@ -15,8 +16,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.SnackbarDefaults.backgroundColor
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -25,6 +28,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -33,6 +38,7 @@ import coil.compose.rememberImagePainter
 import com.google.gson.Gson
 import jg.com.vk_projects.data_class.Item
 import jg.com.vk_projects.data_class.VkService
+import jg.com.vk_projects.ui.theme.Blue500
 import jg.com.vk_projects.ui.theme.Blue700
 import jg.com.vk_projects.ui.theme.VK_ProjectsTheme
 import kotlinx.coroutines.Dispatchers
@@ -55,7 +61,7 @@ class MainActivity : ComponentActivity() {
         val wifiManager = (this as Activity).getSystemService(Context.WIFI_SERVICE) as WifiManager
         setContent {
             VK_ProjectsTheme() {
-                MyScreen(wifiSettingsLauncher, LocalContext.current as Activity)
+                mainScreen(wifiSettingsLauncher, LocalContext.current as Activity)
             }
 
         }
@@ -97,12 +103,16 @@ class MainActivity : ComponentActivity() {
             }
 
         }
+
         if (data.value.isNotEmpty()) {
+
+
             androidx.compose.foundation.lazy.LazyColumn {
                 items(data.value.size) {
+
                     Row(
                         modifier = Modifier
-                            .padding(all = 8.dp)
+                            .padding(top = 30.dp)
                             .fillMaxWidth()
                             .clickable(
                                 interactionSource = remember { MutableInteractionSource() },
@@ -112,7 +122,8 @@ class MainActivity : ComponentActivity() {
                                     color = Blue700
                                 ),
                                 onClick = {
-                                    val intent = Intent(mContext, SecondActivity::class.java)
+                                    val intent =
+                                        Intent(mContext, SecondActivity::class.java)
                                     intent.putExtra(
                                         "name",
                                         data.value[Integer.parseInt("$it")].name
@@ -146,7 +157,7 @@ class MainActivity : ComponentActivity() {
 
                         Spacer(modifier = Modifier.width(15.dp))
 
-                        Column {
+                        Column() {
                             Text(
                                 text = data.value[Integer.parseInt("$it")].name,
                                 fontSize = 25.sp,
@@ -157,6 +168,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+
         } else {
             Column(
                 modifier = Modifier.fillMaxWidth(),
@@ -202,13 +214,35 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun MyScreen(wifi: ActivityResultLauncher<Intent>, mContext: Activity) {
+        Scaffold(
+            topBar = {
+                TopAppBar {
+                    Text(
+                        "Проекты VK",
+                        fontSize = 22.sp,
+                        color = Color.White,
+                        modifier = Modifier.padding(start = 20.dp)
+                    )
+                }
+            },
 
-        if (isWifiEnabled(mContext)) {
-            LazyRecyclerView({})
-        } else {
-            noInternet(wifi)
+            content = {
+                if (isWifiEnabled(mContext)) {
+                    LazyRecyclerView({})
+                } else {
+                    noInternet(wifi)
+                }
+            }
+            )
         }
+
+
+    @Composable
+    fun mainScreen(wifiSettingsLauncher: ActivityResultLauncher<Intent>, mContext: Activity) {
+        MyScreen(wifiSettingsLauncher, mContext)
+
     }
+
 
     fun isWifiEnabled(mContext: Activity): Boolean {
         val wifiManager = mContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
