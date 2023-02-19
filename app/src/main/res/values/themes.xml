@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.VK_Projects" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/blue_500</item>
+        <item name="fontFamily">@font/vk_sans</item>>
+        <item name="buttonBarStyle">@font/vk_sans</item>
+    </style>
+
+</resources>
